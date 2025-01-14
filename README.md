@@ -17,6 +17,17 @@
     - [Para realizar nuestra aplicación en lugar del framework de CSS Bootstrap, vamos a usar Tailwind CSS, ¿lo conoces?](#para-realizar-nuestra-aplicación-en-lugar-del-framework-de-css-bootstrap-vamos-a-usar-tailwind-css-lo-conoces)
       - [Configura el proyecto para hacer uso de Tailwind CSS.](#configura-el-proyecto-para-hacer-uso-de-tailwind-css)
       - [Muestra el nuevo resultado del mensaje Hola mundo que creamos anteriormente, ¿se parece a esto?](#muestra-el-nuevo-resultado-del-mensaje-hola-mundo-que-creamos-anteriormente-se-parece-a-esto)
+  - [Reto 2](#reto-2)
+    - [Anteriormente, ya habíamos borrado y modificado un par de archivos, pero, ¿cumplimos con la filosofía de screaming architecture? Te digo la respuesta, no. Por tanto, vamos a seguir modificando nuestra estructura del proyecto:](#anteriormente-ya-habíamos-borrado-y-modificado-un-par-de-archivos-pero-cumplimos-con-la-filosofía-de-screaming-architecture-te-digo-la-respuesta-no-por-tanto-vamos-a-seguir-modificando-nuestra-estructura-del-proyecto)
+      - [Sin miedo, borramos por completo la carpeta de components.](#sin-miedo-borramos-por-completo-la-carpeta-de-components)
+      - [Crea una nueva carpeta dentro de src llamada modules, y dentro de esta una llamada pokemon, de tal forma que tendríamos src/modules/pokemon.](#crea-una-nueva-carpeta-dentro-de-src-llamada-modules-y-dentro-de-esta-una-llamada-pokemon-de-tal-forma-que-tendríamos-srcmodulespokemon)
+    - [Dentro de la carpeta de pokemon vamos a tener todos los archivos que estén relacionados con nuestro juego de pokemon. La mayor parte de nuestro código irá dentro de esta carpeta.](#dentro-de-la-carpeta-de-pokemon-vamos-a-tener-todos-los-archivos-que-estén-relacionados-con-nuestro-juego-de-pokemon-la-mayor-parte-de-nuestro-código-irá-dentro-de-esta-carpeta)
+      - [Creamos una nueva carpeta llamada composables, ¿qué es un composable en VueJS y cual es la nomenclatura común que se utiliza en los ficheros que contiene?](#creamos-una-nueva-carpeta-llamada-composables-qué-es-un-composable-en-vuejs-y-cual-es-la-nomenclatura-común-que-se-utiliza-en-los-ficheros-que-contiene)
+      - [Creamos una nueva carpeta llamada components.](#creamos-una-nueva-carpeta-llamada-components)
+      - [Creamos una carpeta de views.](#creamos-una-carpeta-de-views)
+    - [Dentro de la carpeta de views, vamos a crear el archivo PokemonGame.vue, ¿cuál crees que será la lógica que irá dentro de este archivo?](#dentro-de-la-carpeta-de-views-vamos-a-crear-el-archivo-pokemongamevue-cuál-crees-que-será-la-lógica-que-irá-dentro-de-este-archivo)
+      - [Genera la estructura básica de vue dentro de este archivo. Recuerda que estamos trabajando con Typescript y Composition API.](#genera-la-estructura-básica-de-vue-dentro-de-este-archivo-recuerda-que-estamos-trabajando-con-typescript-y-composition-api)
+      - [¿Conoces algún atajo para generar esta estructura de forma automática? ¿Con qué extensión y cuál?](#conoces-algún-atajo-para-generar-esta-estructura-de-forma-automática-con-qué-extensión-y-cuál)
 
 ## Reto 1
 
@@ -124,3 +135,35 @@ export default {
 #### Muestra el nuevo resultado del mensaje Hola mundo que creamos anteriormente, ¿se parece a esto?
 Sí, igualito
 ![Reto1Final](img/reto_1.png)
+
+## Reto 2
+ 
+### Anteriormente, ya habíamos borrado y modificado un par de archivos, pero, ¿cumplimos con la filosofía de screaming architecture? Te digo la respuesta, no. Por tanto, vamos a seguir modificando nuestra estructura del proyecto:
+
+#### Sin miedo, borramos por completo la carpeta de components.
+![DeletedComponents](img/deletedComponents.png)
+
+#### Crea una nueva carpeta dentro de src llamada modules, y dentro de esta una llamada pokemon, de tal forma que tendríamos src/modules/pokemon.
+![CreateModule](img/createModules.png)
+
+### Dentro de la carpeta de pokemon vamos a tener todos los archivos que estén relacionados con nuestro juego de pokemon. La mayor parte de nuestro código irá dentro de esta carpeta.
+
+#### Creamos una nueva carpeta llamada composables, ¿qué es un composable en VueJS y cual es la nomenclatura común que se utiliza en los ficheros que contiene?
+Los composables son utilidades que van a ser reutilizadas en distitnas partes del codigo, un ejemplo serian las llamadas a la API.
+
+![CreateComposables](img/createComposable.png)
+
+#### Creamos una nueva carpeta llamada components.
+![CreateComponents](img/createComponents.png)
+
+#### Creamos una carpeta de views.
+![CreateViews](img/createViews.png)
+
+### Dentro de la carpeta de views, vamos a crear el archivo PokemonGame.vue, ¿cuál crees que será la lógica que irá dentro de este archivo?
+Dentro de este archivo estara la vista principal, que consinstira de cada componente.
+
+![CreateView](img/createView.png)
+#### Genera la estructura básica de vue dentro de este archivo. Recuerda que estamos trabajando con Typescript y Composition API.
+![BasicStructure](img/basicStructure.png)
+#### ¿Conoces algún atajo para generar esta estructura de forma automática? ¿Con qué extensión y cuál?
+Si, poniendo "vbase-3-ts-setup" generara la estructura basica usando typescript y poniendo el setup.
