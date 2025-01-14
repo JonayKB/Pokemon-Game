@@ -22,11 +22,11 @@
 
 ### 1. Crea y configura tu repositorio de Github para la aplicación
 
-![RepositoriGithub](ImageRepository.png)
+![RepositoriGithub](img/ImageRepository.png)
 
 ### 2. Crea un proyecto en VueJS
 
-![CreandoProyecto](CreatingProject.png)
+![CreandoProyecto](img/CreatingProject.png)
 
 #### ¿Para qué sirve Vue Router, Pinia, Vitest, ESLint y Prettier?
 - Vue Router: Permite la creacion de aplicaciones de pagina unica (SAP), añadiendo un router que permite cambiar entre componentes.
@@ -41,7 +41,7 @@
 
 #### Para continuar, ejecutamos los comandos y comprobamos que nuestra aplicación VueJS funciona correctamente.
 
-![FirstStart](first_start_image.png)
+![FirstStart](img/first_start_image.png)
 
 #### ¿Qué es Composition API y en qué se diferencia de Option API en VueJS?
 
@@ -58,23 +58,23 @@ Esta architectura es muy util, ya que permite, sin mucho esfuerzo, entender la e
 ### Ahora, vamos a modificar y borrar todo lo que no necesitamos que nos ha creado de forma automática VueJS
 
 #### Vaciar App.vue
-![AppVueVacia](vueAppClean.png)
+![AppVueVacia](img/vueAppClean.png)
 
 #### Recuerda que vamos a utilizar TS en lugar de JS, ¿cómo se lo indicamos a Vue?
 Como vemos en la foto anterior, podemos observar que donde pone lang, tenemos igualado a "ts", eso significa que usara TypeScript para los scripts.
 
 #### Añade un mensaje de Hola mundo en App.vue
-![HellowWorld!](helloWorld.png)
+![HellowWorld!](img/helloWorld.png)
 
 #### En la carpeta de assets, borra los archivos base.css y logo.svg
 
-![AssestsClean](cleanAssests.png)
+![AssestsClean](img/cleanAssests.png)
 
 #### Cambia el nombre de main.css de la carpeta assets a styles.css y modifica la ruta en el archivo main.ts para que funcione correctamente nuestra hoja de estilo
-![styles.css](styles-preview.png)
+![styles.css](img/styles-preview.png)
 
 #### Ejecuta el comando npm run dev y muestra el resultado
-![HelloWorld2](helloWorld2.png)
+![HelloWorld2](img/helloWorld2.png)
 
 ### Para realizar nuestra aplicación en lugar del framework de CSS Bootstrap, vamos a usar Tailwind CSS, ¿lo conoces?
 Si, es como bootstrap, un framework que ayuda a crear el css de la pagina.
@@ -85,7 +85,7 @@ Instalar Tailwind Css:
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
-![TailwindConfig](tailwind-configuration-screenshot.png)
+![TailwindConfig](img/tailwind-configuration-screenshot.png)
 
 Crear css ./src/index.css y añadir
 ```css
@@ -123,4 +123,4 @@ export default {
 
 #### Muestra el nuevo resultado del mensaje Hola mundo que creamos anteriormente, ¿se parece a esto?
 Sí, igualito
-![ResultadoReto1](reto_1.png)
+![Reto1Final](img/reto_1.png)
