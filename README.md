@@ -37,6 +37,16 @@
     - [Ahora, vamos a crear otra nueva sección igual a la anterior pero que muestre al usuario el mensaje: ¿Cuál es este Pokémon?](#ahora-vamos-a-crear-otra-nueva-sección-igual-a-la-anterior-pero-que-muestre-al-usuario-el-mensaje-cuál-es-este-pokémon)
       - [Añade las mismas clases que utilizamos en la sección anterior.](#añade-las-mismas-clases-que-utilizamos-en-la-sección-anterior)
       - [En esta sección añadiremos dos componentes: Pokemon Picture y Pokemon Options, ¿para qué crees que sirven? ¿Te aventuras a intentar averiguar cual será la lógica que implementemos en ellos?](#en-esta-sección-añadiremos-dos-componentes-pokemon-picture-y-pokemon-options-para-qué-crees-que-sirven-te-aventuras-a-intentar-averiguar-cual-será-la-lógica-que-implementemos-en-ellos)
+  - [Reto 3](#reto-3)
+    - [PokemonPicture.vue](#pokemonpicturevue)
+      - [Lo que vamos a hacer en este componente es importar directamente desde PokeApi una imagen de un pokemon (Ditto para ser más exactos).](#lo-que-vamos-a-hacer-en-este-componente-es-importar-directamente-desde-pokeapi-una-imagen-de-un-pokemon-ditto-para-ser-más-exactos)
+      - [Siguiendo la misma forma que en PokemonGame.vue de las secciones, en este componente nos crearemos una sección que contendrá una imagen del pokemon Ditto. (No es necesario realizar la conexión directamente a la API, copia y pega la url de la imagen y muéstrala).](#siguiendo-la-misma-forma-que-en-pokemongamevue-de-las-secciones-en-este-componente-nos-crearemos-una-sección-que-contendrá-una-imagen-del-pokemon-ditto-no-es-necesario-realizar-la-conexión-directamente-a-la-api-copia-y-pega-la-url-de-la-imagen-y-muéstrala)
+      - [El resultado de todos los pasos anteriores debe ser el siguiente:](#el-resultado-de-todos-los-pasos-anteriores-debe-ser-el-siguiente)
+      - [Ahora bien, nosotros queremos que inicialmente la imagen de nuestro Pokémon esté completamente oculta como en la imagen del resultado final, ¿cómo hacemos esto? utilizando una clase de Tailwind CSS llamada brightness-0. Comprueba que la imagen de tu Pokémon ahora mismo esté completamente negra. Añade también la clase h-\[200px\], ¿para qué sirve?](#ahora-bien-nosotros-queremos-que-inicialmente-la-imagen-de-nuestro-pokémon-esté-completamente-oculta-como-en-la-imagen-del-resultado-final-cómo-hacemos-esto-utilizando-una-clase-de-tailwind-css-llamada-brightness-0-comprueba-que-la-imagen-de-tu-pokémon-ahora-mismo-esté-completamente-negra-añade-también-la-clase-h-200px-para-qué-sirve)
+    - [PokemonOptions.vue](#pokemonoptionsvue)
+      - [En una nueva sección vamos a "simular" lo que serían las opciones de los Pokémon. Esto lo vas a hacer creando una lista de HTML tal y como se muestra en la imagen final.](#en-una-nueva-sección-vamos-a-simular-lo-que-serían-las-opciones-de-los-pokémon-esto-lo-vas-a-hacer-creando-una-lista-de-html-tal-y-como-se-muestra-en-la-imagen-final)
+      - [Ahora, mediante clases css de tailwind, dale aspecto de botones a esa lista. Recuerda que para aplicar clases de Tailwind desde la etiqueta de styles tendrás que usar @apply. ¿Lo conseguiste?](#ahora-mediante-clases-css-de-tailwind-dale-aspecto-de-botones-a-esa-lista-recuerda-que-para-aplicar-clases-de-tailwind-desde-la-etiqueta-de-styles-tendrás-que-usar-apply-lo-conseguiste)
+    - [El color de fondo de nuestra aplicación es: #f1f1f1, para aplicarlo, ¿dónde debes colocar el código css correspondiente? aplícalo y muestra los cambios.](#el-color-de-fondo-de-nuestra-aplicación-es-f1f1f1-para-aplicarlo-dónde-debes-colocar-el-código-css-correspondiente-aplícalo-y-muestra-los-cambios)
 
 ## Reto 1
 
@@ -206,3 +216,23 @@ Usando un v-show, a una referencia que podemos cambiar a nuestro gusto.
 #### Añade las mismas clases que utilizamos en la sección anterior.
 #### En esta sección añadiremos dos componentes: Pokemon Picture y Pokemon Options, ¿para qué crees que sirven? ¿Te aventuras a intentar averiguar cual será la lógica que implementemos en ellos?
 Uno sera la imagen del pokemon y otra las opciones a elegir 
+
+## Reto 3
+
+### PokemonPicture.vue
+
+#### Lo que vamos a hacer en este componente es importar directamente desde PokeApi una imagen de un pokemon (Ditto para ser más exactos).
+
+#### Siguiendo la misma forma que en PokemonGame.vue de las secciones, en este componente nos crearemos una sección que contendrá una imagen del pokemon Ditto. (No es necesario realizar la conexión directamente a la API, copia y pega la url de la imagen y muéstrala).
+
+#### El resultado de todos los pasos anteriores debe ser el siguiente:
+
+#### Ahora bien, nosotros queremos que inicialmente la imagen de nuestro Pokémon esté completamente oculta como en la imagen del resultado final, ¿cómo hacemos esto? utilizando una clase de Tailwind CSS llamada brightness-0. Comprueba que la imagen de tu Pokémon ahora mismo esté completamente negra. Añade también la clase h-[200px], ¿para qué sirve?
+
+### PokemonOptions.vue
+
+#### En una nueva sección vamos a "simular" lo que serían las opciones de los Pokémon. Esto lo vas a hacer creando una lista de HTML tal y como se muestra en la imagen final. 
+
+#### Ahora, mediante clases css de tailwind, dale aspecto de botones a esa lista. Recuerda que para aplicar clases de Tailwind desde la etiqueta de styles tendrás que usar @apply. ¿Lo conseguiste?
+
+### El color de fondo de nuestra aplicación es: #f1f1f1, para aplicarlo, ¿dónde debes colocar el código css correspondiente? aplícalo y muestra los cambios.
