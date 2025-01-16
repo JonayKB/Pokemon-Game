@@ -28,6 +28,15 @@
     - [Dentro de la carpeta de views, vamos a crear el archivo PokemonGame.vue, ¿cuál crees que será la lógica que irá dentro de este archivo?](#dentro-de-la-carpeta-de-views-vamos-a-crear-el-archivo-pokemongamevue-cuál-crees-que-será-la-lógica-que-irá-dentro-de-este-archivo)
       - [Genera la estructura básica de vue dentro de este archivo. Recuerda que estamos trabajando con Typescript y Composition API.](#genera-la-estructura-básica-de-vue-dentro-de-este-archivo-recuerda-que-estamos-trabajando-con-typescript-y-composition-api)
       - [¿Conoces algún atajo para generar esta estructura de forma automática? ¿Con qué extensión y cuál?](#conoces-algún-atajo-para-generar-esta-estructura-de-forma-automática-con-qué-extensión-y-cuál)
+    - [Usando la etiqueta  de HTML, vamos a dividir nuestro template. Tendremos:](#usando-la-etiqueta--de-html-vamos-a-dividir-nuestro-template-tendremos)
+      - [Una sección que tenga un mensaje que indique al usuario que: Espere por favor y Cargando Pokémons. De tal manera que:](#una-sección-que-tenga-un-mensaje-que-indique-al-usuario-que-espere-por-favor-y-cargando-pokémons-de-tal-manera-que)
+      - [¿Para qué sirven las clases que hemos añadido?](#para-qué-sirven-las-clases-que-hemos-añadido)
+    - [Saca una captura de como se ve actualmente nuestra aplicación. ¿No ves los cambios? Algo se te olvida... ¿qué es? Indica los archivos que has tenido que modificar.](#saca-una-captura-de-como-se-ve-actualmente-nuestra-aplicación-no-ves-los-cambios-algo-se-te-olvida-qué-es-indica-los-archivos-que-has-tenido-que-modificar)
+      - [Si todo ha ido bien, tu aplicación tendría que verse tal que así:](#si-todo-ha-ido-bien-tu-aplicación-tendría-que-verse-tal-que-así)
+      - [Utilizando una directiva de VueJS, ¿cómo ocultaríamos esta sección por completo?](#utilizando-una-directiva-de-vuejs-cómo-ocultaríamos-esta-sección-por-completo)
+    - [Ahora, vamos a crear otra nueva sección igual a la anterior pero que muestre al usuario el mensaje: ¿Cuál es este Pokémon?](#ahora-vamos-a-crear-otra-nueva-sección-igual-a-la-anterior-pero-que-muestre-al-usuario-el-mensaje-cuál-es-este-pokémon)
+      - [Añade las mismas clases que utilizamos en la sección anterior.](#añade-las-mismas-clases-que-utilizamos-en-la-sección-anterior)
+      - [En esta sección añadiremos dos componentes: Pokemon Picture y Pokemon Options, ¿para qué crees que sirven? ¿Te aventuras a intentar averiguar cual será la lógica que implementemos en ellos?](#en-esta-sección-añadiremos-dos-componentes-pokemon-picture-y-pokemon-options-para-qué-crees-que-sirven-te-aventuras-a-intentar-averiguar-cual-será-la-lógica-que-implementemos-en-ellos)
 
 ## Reto 1
 
@@ -160,10 +169,40 @@ Los composables son utilidades que van a ser reutilizadas en distitnas partes de
 ![CreateViews](img/createViews.png)
 
 ### Dentro de la carpeta de views, vamos a crear el archivo PokemonGame.vue, ¿cuál crees que será la lógica que irá dentro de este archivo?
-Dentro de este archivo estara la vista principal, que consinstira de cada componente.
+Dentro de este archivo estara las vistas principales, que consinstira de cada pantalla.
 
 ![CreateView](img/createView.png)
 #### Genera la estructura básica de vue dentro de este archivo. Recuerda que estamos trabajando con Typescript y Composition API.
 ![BasicStructure](img/basicStructure.png)
 #### ¿Conoces algún atajo para generar esta estructura de forma automática? ¿Con qué extensión y cuál?
 Si, poniendo "vbase-3-ts-setup" generara la estructura basica usando typescript y poniendo el setup.
+
+### Usando la etiqueta <section> de HTML, vamos a dividir nuestro template. Tendremos:
+
+#### Una sección que tenga un mensaje que indique al usuario que: Espere por favor y Cargando Pokémons. De tal manera que:
+![FirstSection](img/first-Section.png)
+
+#### ¿Para qué sirven las clases que hemos añadido?
+
+Son los estilos de tailwind:
+los primeros ponene que es flex y el tipo, despues que la altura y la anchura se ajuste a la pantalla.
+En h1, poneemos que el texto sea grande.
+Y en el h3, que tenga una animacion.
+
+### Saca una captura de como se ve actualmente nuestra aplicación. ¿No ves los cambios? Algo se te olvida... ¿qué es? Indica los archivos que has tenido que modificar.
+
+Hay que añadir el component a App.vue
+![App.vue Add PokemonGame](img/add-Pokemon-game.png)
+
+#### Si todo ha ido bien, tu aplicación tendría que verse tal que así:
+![ShowFirstScreen](img/showFirstScreen.png)
+
+#### Utilizando una directiva de VueJS, ¿cómo ocultaríamos esta sección por completo?
+Usando un v-show, a una referencia que podemos cambiar a nuestro gusto.
+![v-show](img/v-show.png)
+
+### Ahora, vamos a crear otra nueva sección igual a la anterior pero que muestre al usuario el mensaje: ¿Cuál es este Pokémon?
+![WhatIsThatPokemon](img/pokemon_image)
+#### Añade las mismas clases que utilizamos en la sección anterior.
+#### En esta sección añadiremos dos componentes: Pokemon Picture y Pokemon Options, ¿para qué crees que sirven? ¿Te aventuras a intentar averiguar cual será la lógica que implementemos en ellos?
+Uno sera la imagen del pokemon y otra las opciones a elegir 
