@@ -211,10 +211,11 @@ Hay que añadir el component a App.vue
 
 #### Utilizando una directiva de VueJS, ¿cómo ocultaríamos esta sección por completo?
 Usando un v-show, a una referencia que podemos cambiar a nuestro gusto.
+
 ![v-show](img/v-show.png)
 
 ### Ahora, vamos a crear otra nueva sección igual a la anterior pero que muestre al usuario el mensaje: ¿Cuál es este Pokémon?
-![WhatIsThatPokemon](img/pokemon_image)
+![WhatIsThatPokemon](img/pokemon_image.png)
 #### Añade las mismas clases que utilizamos en la sección anterior.
 #### En esta sección añadiremos dos componentes: Pokemon Picture y Pokemon Options, ¿para qué crees que sirven? ¿Te aventuras a intentar averiguar cual será la lógica que implementemos en ellos?
 Uno sera la imagen del pokemon y otra las opciones a elegir 
