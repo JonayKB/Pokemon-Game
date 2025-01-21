@@ -153,6 +153,7 @@ export default {
 
 #### Muestra el nuevo resultado del mensaje Hola mundo que creamos anteriormente, ¿se parece a esto?
 Sí, igualito
+
 ![Reto1Final](img/reto_1.png)
 
 ## Reto 2
@@ -202,6 +203,7 @@ Y en el h3, que tenga una animacion.
 ### Saca una captura de como se ve actualmente nuestra aplicación. ¿No ves los cambios? Algo se te olvida... ¿qué es? Indica los archivos que has tenido que modificar.
 
 Hay que añadir el component a App.vue
+
 ![App.vue Add PokemonGame](img/add-Pokemon-game.png)
 
 #### Si todo ha ido bien, tu aplicación tendría que verse tal que así:
