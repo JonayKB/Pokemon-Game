@@ -7,12 +7,16 @@
   <section class="flex flex-col justify-center items-center w-screen h-screen">
     <h1>¿Quién es este Pokémon?</h1>
     <!-- Pokemon Picture -->
+    <PokemonPicture/>
     <!-- Pokemon Options -->
+    <PokemonOptions/>
   </section>
 
 </template>
 
 <script setup lang="ts">
+import PokemonOptions from '@/components/PokemonOptions.vue';
+import PokemonPicture from '@/components/PokemonPicture.vue';
 import { ref } from 'vue';
 
 const show = ref(false);
