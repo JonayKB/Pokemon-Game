@@ -226,13 +226,24 @@ Uno sera la imagen del pokemon y otra las opciones a elegir
 #### Siguiendo la misma forma que en PokemonGame.vue de las secciones, en este componente nos crearemos una sección que contendrá una imagen del pokemon Ditto. (No es necesario realizar la conexión directamente a la API, copia y pega la url de la imagen y muéstrala).
 
 #### El resultado de todos los pasos anteriores debe ser el siguiente:
+![PomemonPicture](img/imagePokemonPicture.png)
 
 #### Ahora bien, nosotros queremos que inicialmente la imagen de nuestro Pokémon esté completamente oculta como en la imagen del resultado final, ¿cómo hacemos esto? utilizando una clase de Tailwind CSS llamada brightness-0. Comprueba que la imagen de tu Pokémon ahora mismo esté completamente negra. Añade también la clase h-[200px], ¿para qué sirve?
+Mantiene a 200px la altura
 
+![PokemonPicture](img/imagePokemonPictureBlack.png)
+
+![CodePokemonPicture](img/pokemonPicutreReto3.png)
 ### PokemonOptions.vue
 
 #### En una nueva sección vamos a "simular" lo que serían las opciones de los Pokémon. Esto lo vas a hacer creando una lista de HTML tal y como se muestra en la imagen final. 
 
 #### Ahora, mediante clases css de tailwind, dale aspecto de botones a esa lista. Recuerda que para aplicar clases de Tailwind desde la etiqueta de styles tendrás que usar @apply. ¿Lo conseguiste?
+Si, asi:
 
+![Code](img/code-pokemonOptions.png)
 ### El color de fondo de nuestra aplicación es: #f1f1f1, para aplicarlo, ¿dónde debes colocar el código css correspondiente? aplícalo y muestra los cambios.
+
+Hay que aplicarlo al body del archivo index que contiene la app, aqui:
+
+![Body](img/body.png)
