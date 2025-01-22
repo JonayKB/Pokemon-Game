@@ -47,6 +47,23 @@
       - [En una nueva sección vamos a "simular" lo que serían las opciones de los Pokémon. Esto lo vas a hacer creando una lista de HTML tal y como se muestra en la imagen final.](#en-una-nueva-sección-vamos-a-simular-lo-que-serían-las-opciones-de-los-pokémon-esto-lo-vas-a-hacer-creando-una-lista-de-html-tal-y-como-se-muestra-en-la-imagen-final)
       - [Ahora, mediante clases css de tailwind, dale aspecto de botones a esa lista. Recuerda que para aplicar clases de Tailwind desde la etiqueta de styles tendrás que usar @apply. ¿Lo conseguiste?](#ahora-mediante-clases-css-de-tailwind-dale-aspecto-de-botones-a-esa-lista-recuerda-que-para-aplicar-clases-de-tailwind-desde-la-etiqueta-de-styles-tendrás-que-usar-apply-lo-conseguiste)
     - [El color de fondo de nuestra aplicación es: #f1f1f1, para aplicarlo, ¿dónde debes colocar el código css correspondiente? aplícalo y muestra los cambios.](#el-color-de-fondo-de-nuestra-aplicación-es-f1f1f1-para-aplicarlo-dónde-debes-colocar-el-código-css-correspondiente-aplícalo-y-muestra-los-cambios)
+  - [Reto 4](#reto-4)
+    - [Animations.css](#animationscss)
+      - [Copiamos las cosas](#copiamos-las-cosas)
+    - [Vamos a hacer que nuestro juego funcione. Empecemos la lógica de nuestra aplicación:](#vamos-a-hacer-que-nuestro-juego-funcione-empecemos-la-lógica-de-nuestra-aplicación)
+      - [En primer lugar vamos a crear un archivo que vamos a llamar usePokemonGame.ts dentro de la carpeta de composables.](#en-primer-lugar-vamos-a-crear-un-archivo-que-vamos-a-llamar-usepokemongamets-dentro-de-la-carpeta-de-composables)
+      - [Crear el enum](#crear-el-enum)
+      - [Crear el archivo barril](#crear-el-archivo-barril)
+      - [Volvemos a nuestro archivo usePokemonGame.ts:](#volvemos-a-nuestro-archivo-usepokemongamets)
+      - [¿Qué es lo que estamos haciendo con el código hasta ahora?](#qué-es-lo-que-estamos-haciendo-con-el-código-hasta-ahora)
+      - [Ahora, vamos a conectarnos con nuestra PokeApi para poder recuperar una lista con los pokemons que vamos a usar en nuestro juego. Para ello, vamos a utilizar Axios. ¿Qué es Axios? ¿Lo has usado antes?](#ahora-vamos-a-conectarnos-con-nuestra-pokeapi-para-poder-recuperar-una-lista-con-los-pokemons-que-vamos-a-usar-en-nuestro-juego-para-ello-vamos-a-utilizar-axios-qué-es-axios-lo-has-usado-antes)
+      - [Instalamos Axios](#instalamos-axios)
+      - [Creamos PokemonAPI](#creamos-pokemonapi)
+      - [Modificamos usePokemonGame](#modificamos-usepokemongame)
+      - [Lo añadimos a pokemonGame](#lo-añadimos-a-pokemongame)
+      - [Creamos el tipo de la respuesta](#creamos-el-tipo-de-la-respuesta)
+      - [Modificamos usePokemonGame para tipar el objeto](#modificamos-usepokemongame-para-tipar-el-objeto)
+      - [Cambiamos el log a el results](#cambiamos-el-log-a-el-results)
 
 ## Reto 1
 
@@ -250,3 +267,68 @@ Si, asi:
 Hay que aplicarlo al body del archivo index que contiene la app, aqui:
 
 ![Body](img/body.png)
+
+## Reto 4
+
+### Animations.css
+#### Copiamos las cosas
+![Animation.css](img/animations.css.png)
+
+### Vamos a hacer que nuestro juego funcione. Empecemos la lógica de nuestra aplicación:
+
+#### En primer lugar vamos a crear un archivo que vamos a llamar usePokemonGame.ts dentro de la carpeta de composables.
+
+![useComposables](img/useComposables.png)
+
+#### Crear el enum
+
+![Enum](img/enum.png)
+
+#### Crear el archivo barril
+
+El fichero barril, lo usamos para al realizar imports en otra  clase, ahorrarnoslos, metiendolos todos en un archivo, el cual imporaremos y realizara interiormente los otros imports.
+
+![BarrelFile](img/barrelFile.png)
+
+#### Volvemos a nuestro archivo usePokemonGame.ts:
+![GameStatus](img/gameStatus.png)
+
+#### ¿Qué es lo que estamos haciendo con el código hasta ahora?
+Estamos haciedo que al usar el usePokemonGame nos devuelva el estado de la partida, en este caso lo inicializamos en playing.
+
+#### Ahora, vamos a conectarnos con nuestra PokeApi para poder recuperar una lista con los pokemons que vamos a usar en nuestro juego. Para ello, vamos a utilizar Axios. ¿Qué es Axios? ¿Lo has usado antes?
+Si, los hemos usado en otas asignaturas, es una herramienta que nos facilita el realizar consultas HTTP a un servicio.
+
+#### Instalamos Axios
+```bash
+npm install axios
+
+added 4 packages, and audited 479 packages in 2s
+
+129 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+```
+
+#### Creamos PokemonAPI
+![PokemonApi](img/pokemonApi.png)
+
+#### Modificamos usePokemonGame
+![usePokemonGame](img/usePokemonGameStatus.png)
+
+#### Lo añadimos a pokemonGame
+![pokemonGameUpdate](img/pokemonGameUpdate.png)
+
+#### Creamos el tipo de la respuesta
+![Response](img/PokemonListResponse.png)
+
+#### Modificamos usePokemonGame para tipar el objeto
+![Tipado](img/tipado.png)
+
+#### Cambiamos el log a el results
+![Results](img/pokemonConsoloResults.png)
+
+Respuesta:
+
+![ResponseConsoleLOg](response_console_log.png)
