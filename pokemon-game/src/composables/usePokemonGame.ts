@@ -8,13 +8,19 @@ export const usePokemonGame = () => {
 
   const getPokemons = async () => {
     const pokemonApi = new PokemonApi()
-    const response = await pokemonApi.get("/?limit=151")
-    const pokemons: PokemonListResponse = response.data
-    console.log(pokemons.results)
+    const response: PokemonListResponse = (await pokemonApi.get("/?limit=151")).data as PokemonListResponse
+    const pokemonsArray = response.results.map((pokemon) => {
+      const urlParts = pokemon.url.split('/');
+      const id = parseInt(urlParts[urlParts.length - 2]) ?? 0;
+      return { id, name: pokemon.name };
+    });
+    pokemonsArray.sort(() => Math.random() - 0.5)
+    return pokemonsArray;
   };
 
-  onMounted(() => {
-    getPokemons()
+  onMounted(async () => {
+    const pokemons = await getPokemons();
+    console.log(pokemons);
   });
 
   return {

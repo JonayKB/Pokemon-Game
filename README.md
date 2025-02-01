@@ -64,6 +64,17 @@
       - [Creamos el tipo de la respuesta](#creamos-el-tipo-de-la-respuesta)
       - [Modificamos usePokemonGame para tipar el objeto](#modificamos-usepokemongame-para-tipar-el-objeto)
       - [Cambiamos el log a el results](#cambiamos-el-log-a-el-results)
+  - [Reto 5](#reto-5)
+    - [Vamos a modificar el método getPokemons que hemos creado en el archivo usePokemonGame.ts para quedarnos solo con el nombre y el id de la respuesta:](#vamos-a-modificar-el-método-getpokemons-que-hemos-creado-en-el-archivo-usepokemongamets-para-quedarnos-solo-con-el-nombre-y-el-id-de-la-respuesta)
+      - [¿Recuerdas que habíamos tipado esta respuesta? Bien, pues vamos a crear un nuevo archivo dentro de la carpeta interfaces que se va a llamar pokemon.interface.ts y crea una interfaz para Pokemon que contenga el id de tipo number y name de tipo string.](#recuerdas-que-habíamos-tipado-esta-respuesta-bien-pues-vamos-a-crear-un-nuevo-archivo-dentro-de-la-carpeta-interfaces-que-se-va-a-llamar-pokemoninterfacets-y-crea-una-interfaz-para-pokemon-que-contenga-el-id-de-tipo-number-y-name-de-tipo-string)
+      - [Volvamos a usePokemonGame.ts. Importamos la interfaz que acabamos de crear:](#volvamos-a-usepokemongamets-importamos-la-interfaz-que-acabamos-de-crear)
+      - [Y modificamos el método getPokemons de la siguiente forma:](#y-modificamos-el-método-getpokemons-de-la-siguiente-forma)
+      - [¿Qué es lo que estamos haciendo? ¿Para qué sirve la línea de código: const id = urlParts\[urlParts.length - 2\] ?? 0;?](#qué-es-lo-que-estamos-haciendo-para-qué-sirve-la-línea-de-código-const-id--urlpartsurlpartslength---2--0)
+      - [Ahora vamos a llamar a nuestro método modificando el onMounted() que habíamos creado anteriormente de la siguiente manera:](#ahora-vamos-a-llamar-a-nuestro-método-modificando-el-onmounted-que-habíamos-creado-anteriormente-de-la-siguiente-manera)
+      - [Muestra el resultado de la consola.](#muestra-el-resultado-de-la-consola)
+    - [El resultado ahora nos muestra una lista de los 151 pokemons ordenados según su id. Nosotros NO queremos que estén ordenados los pokemons, por tanto, vamos a hacer que nuestra lista nos la devuelva de forma aleatoria, ¿se te ocurre cómo?](#el-resultado-ahora-nos-muestra-una-lista-de-los-151-pokemons-ordenados-según-su-id-nosotros-no-queremos-que-estén-ordenados-los-pokemons-por-tanto-vamos-a-hacer-que-nuestra-lista-nos-la-devuelva-de-forma-aleatoria-se-te-ocurre-cómo)
+      - [Modifica el return del método getPokemons usando la función sort de javascript junto con Math.random() para devolver la lista de Pokemons desordenada. ¿Lo conseguiste?](#modifica-el-return-del-método-getpokemons-usando-la-función-sort-de-javascript-junto-con-mathrandom-para-devolver-la-lista-de-pokemons-desordenada-lo-conseguiste)
+      - [Muestra los resultados por la consola.](#muestra-los-resultados-por-la-consola)
 
 ## Reto 1
 
@@ -331,4 +342,44 @@ found 0 vulnerabilities
 
 Respuesta:
 
-![ResponseConsoleLOg](response_console_log.png)
+![ResponseConsoleLOg](img/response_console_log.png)
+
+## Reto 5 
+
+### Vamos a modificar el método getPokemons que hemos creado en el archivo usePokemonGame.ts para quedarnos solo con el nombre y el id de la respuesta:
+
+#### ¿Recuerdas que habíamos tipado esta respuesta? Bien, pues vamos a crear un nuevo archivo dentro de la carpeta interfaces que se va a llamar pokemon.interface.ts y crea una interfaz para Pokemon que contenga el id de tipo number y name de tipo string.
+![InterfazPokemon](img/Ipokemon.png)
+
+#### Volvamos a usePokemonGame.ts. Importamos la interfaz que acabamos de crear:
+
+
+#### Y modificamos el método getPokemons de la siguiente forma:
+
+
+#### ¿Qué es lo que estamos haciendo? ¿Para qué sirve la línea de código: const id = urlParts[urlParts.length - 2] ?? 0;?
+
+Esta linea contiene dos cositas interesantes a comentar, la priemra seria el [urlParts.lenght - 2], lo que estamos haciendo es coger la ultima division del split, por ejemplo : "http://poke.api/pokemon/id/", si pusieramos menos uno, pillariamos la ultima, que es una espacio vacio, pero al poner menos dos, pillamos la id.
+
+Y despues esta el uso del "nullish", esto se usa para cuando el valor de la izquierda es nulo o un valor invalido, se establecera el valor de la derecha.
+
+![GetPokemons](img/tarea6GetPoemons.png)
+
+#### Ahora vamos a llamar a nuestro método modificando el onMounted() que habíamos creado anteriormente de la siguiente manera:
+![onMountedTarea6](img/onMountedtarea6.png)
+
+#### Muestra el resultado de la consola.
+![resutlado](img/onMountedResultado.png)
+
+### El resultado ahora nos muestra una lista de los 151 pokemons ordenados según su id. Nosotros NO queremos que estén ordenados los pokemons, por tanto, vamos a hacer que nuestra lista nos la devuelva de forma aleatoria, ¿se te ocurre cómo?
+Si, usando Math.random() y usando un sort con ese valor, haciendo que por cada uno se ordene en una posicion aleatoria
+
+#### Modifica el return del método getPokemons usando la función sort de javascript junto con Math.random() para devolver la lista de Pokemons desordenada. ¿Lo conseguiste?
+
+Sí :D
+```ts
+pokemonsArray.sort(() => Math.random() - 0.5)
+```
+
+#### Muestra los resultados por la consola.
+![resultadoDesordenado](img/unorndedResutl.png)
