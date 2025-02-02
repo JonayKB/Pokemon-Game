@@ -78,12 +78,10 @@
   - [Reto 6](#reto-6)
     - [¿Qué es una propiedad computada?](#qué-es-una-propiedad-computada)
     - [En usePokemonGame.ts crea una nueva propiedad computada llamada isLoading de la siguiente forma:](#en-usepokemongamets-crea-una-nueva-propiedad-computada-llamada-isloading-de-la-siguiente-forma)
-    - [Lo que estamos haciendo aquí es determinar si el array de Pokemon está o no vacío, de tal forma que podamos mostrar o no cierta información en base a ello, como por ejemplo:](#lo-que-estamos-haciendo-aquí-es-determinar-si-el-array-de-pokemon-está-o-no-vacío-de-tal-forma-que-podamos-mostrar-o-no-cierta-información-en-base-a-ello-como-por-ejemplo)
       - [Mostrar en PokemonGame.vue el mensaje de "Espere por favor" y "Cargando Pokemons":](#mostrar-en-pokemongamevue-el-mensaje-de-espere-por-favor-y-cargando-pokemons)
     - [Al probar lo anterior, notarás que el cambio es prácticamente imperceptible. Por tanto:](#al-probar-lo-anterior-notarás-que-el-cambio-es-prácticamente-imperceptible-por-tanto)
       - [Añade una promesa en onMounted() del archivo usePokemonGame usando la función setTimeout para que al cargar la respuesta, tarde 1000 milésimas de segundo.](#añade-una-promesa-en-onmounted-del-archivo-usepokemongame-usando-la-función-settimeout-para-que-al-cargar-la-respuesta-tarde-1000-milésimas-de-segundo)
       - [Comprueba que ahora se modifica el componente.](#comprueba-que-ahora-se-modifica-el-componente)
-      - [Una vez compruebes que funciona correctamente, puedes borrarlo, ya que no nos va a hacer falta (trolleito jiji xd)](#una-vez-compruebes-que-funciona-correctamente-puedes-borrarlo-ya-que-no-nos-va-a-hacer-falta-trolleito-jiji-xd)
     - [Ahora vamos a crear otra propiedad reactiva a la que vamos a llamar pokemonOptions:](#ahora-vamos-a-crear-otra-propiedad-reactiva-a-la-que-vamos-a-llamar-pokemonoptions)
       - [Estos pokemonOption van a ser las opciones de los Pokemons que vamos a mostrar, y por tanto, tenemos que crear una nueva función para manejarlas.](#estos-pokemonoption-van-a-ser-las-opciones-de-los-pokemons-que-vamos-a-mostrar-y-por-tanto-tenemos-que-crear-una-nueva-función-para-manejarlas)
       - [En usePokemonGame añade:](#en-usepokemongame-añade)
@@ -95,9 +93,6 @@
     - [Ahora lo que debemos hacer es saber cual es la imagen correspondiente con ese Pokémon.](#ahora-lo-que-debemos-hacer-es-saber-cual-es-la-imagen-correspondiente-con-ese-pokémon)
       - [¿Qué estamos haciendo aquí?](#qué-estamos-haciendo-aquí)
     - [Vamos a PokemonPicture.vue y lo que tenemos que hacer es:](#vamos-a-pokemonpicturevue-y-lo-que-tenemos-que-hacer-es)
-      - [Definir las props](#definir-las-props)
-      - [Hacer el bind de src usando una propiedad computada:](#hacer-el-bind-de-src-usando-una-propiedad-computada)
-      - [Donde el enlace se modifica de la siguiente forma:](#donde-el-enlace-se-modifica-de-la-siguiente-forma)
       - [Muestra el resultado y comprueba que es correcto.](#muestra-el-resultado-y-comprueba-que-es-correcto)
       - [Ahora necesitamos crear otra propiedad que se encargue de mostrar la imagen original si se ha seleccionado la opción correcta. De la misma forma que lo anterior, hacemos:](#ahora-necesitamos-crear-otra-propiedad-que-se-encargue-de-mostrar-la-imagen-original-si-se-ha-seleccionado-la-opción-correcta-de-la-misma-forma-que-lo-anterior-hacemos)
       - [En PokemonPicture.vue:](#en-pokemonpicturevue)
@@ -113,7 +108,6 @@
       - [Ahora, en la consola debería aparecer el id del Pokemon al que estamos haciendo click.](#ahora-en-la-consola-debería-aparecer-el-id-del-pokemon-al-que-estamos-haciendo-click)
     - [Ahora vamos a centrarnos en saber cuando el jugador gana.](#ahora-vamos-a-centrarnos-en-saber-cuando-el-jugador-gana)
       - [La lógica es muy sencilla. Será true cuando el id de la imagen del Pokemon sea igual al id que se emite cuando el usuario hace click sobre una opción.](#la-lógica-es-muy-sencilla-será-true-cuando-el-id-de-la-imagen-del-pokemon-sea-igual-al-id-que-se-emite-cuando-el-usuario-hace-click-sobre-una-opción)
-      - [Recuerden que teníamos una variable llamada GameStatus.](#recuerden-que-teníamos-una-variable-llamada-gamestatus)
       - [En nuestro composable, vamos a crear una nueva función llamada checkAnswer. Esta función recibe el id de la opción que el usuario está pulsando y tendremos que verificar si ese id es igual el id del Pokemon.](#en-nuestro-composable-vamos-a-crear-una-nueva-función-llamada-checkanswer-esta-función-recibe-el-id-de-la-opción-que-el-usuario-está-pulsando-y-tendremos-que-verificar-si-ese-id-es-igual-el-id-del-pokemon)
       - [Si gana, el gameStatus cambia de valor. Pasará de Playing a Won.](#si-gana-el-gamestatus-cambia-de-valor-pasará-de-playing-a-won)
       - [Cuando el usuario gana, vamos a lanzar una animación. Para ello:](#cuando-el-usuario-gana-vamos-a-lanzar-una-animación-para-ello)
@@ -121,8 +115,6 @@
         - [Instala el paquete en el proyecto.](#instala-el-paquete-en-el-proyecto)
         - [Importa el paquete en el composable. (Vale, aquí nos va a saltar un error ya que el paquete está pensado para javascript y no typescript. Para arreglarlo tendremos que ejecutar otro comando: npm i --save-dev @types/canvas-confetti, lo que estamos haciendo con este comando es instalar el paquete DT (archivo de definición) y eso debería hacer que el error desaparezca).](#importa-el-paquete-en-el-composable-vale-aquí-nos-va-a-saltar-un-error-ya-que-el-paquete-está-pensado-para-javascript-y-no-typescript-para-arreglarlo-tendremos-que-ejecutar-otro-comando-npm-i---save-dev-typescanvas-confetti-lo-que-estamos-haciendo-con-este-comando-es-instalar-el-paquete-dt-archivo-de-definición-y-eso-debería-hacer-que-el-error-desaparezca)
         - [Ahora, si la persona gana, vamos a lanzar la animación.](#ahora-si-la-persona-gana-vamos-a-lanzar-la-animación)
-      - [Vamos a seguir completando nuestra función, ¿qué pasa si el usuario pierde?](#vamos-a-seguir-completando-nuestra-función-qué-pasa-si-el-usuario-pierde)
-        - [Si el usuario no gana, tendremos que cambiar el status a Lost.](#si-el-usuario-no-gana-tendremos-que-cambiar-el-status-a-lost)
         - [Una vez que se determine que el usuario perdió, hay que bloquear los botones restantes para evitar que el usuario haga click hasta encontrar la respuesta correcta.](#una-vez-que-se-determine-que-el-usuario-perdió-hay-que-bloquear-los-botones-restantes-para-evitar-que-el-usuario-haga-click-hasta-encontrar-la-respuesta-correcta)
       - [Como tarea, ¿serías capaz de mostrar la opción correcta al usuario una vez pierda el juego? Impleméntalo.](#como-tarea-serías-capaz-de-mostrar-la-opción-correcta-al-usuario-una-vez-pierda-el-juego-impleméntalo)
       - [Como extra, podrías intentar implementar un botón para volver a reiniciar el juego, ¿eres capaz?](#como-extra-podrías-intentar-implementar-un-botón-para-volver-a-reiniciar-el-juego-eres-capaz)
@@ -439,115 +431,259 @@ pokemonsArray.sort(() => Math.random() - 0.5)
 
 
 ### ¿Qué es una propiedad computada?
+
+Hay operaciones que son muy pesadas para el template, para eso usamos el computed, ya que realiza esta funcion
+y nos devolvera el resultado en la vista.
+
 ### En usePokemonGame.ts crea una nueva propiedad computada llamada isLoading de la siguiente forma:
 
+![computed](img/computed.png)
 
-
-
-### Lo que estamos haciendo aquí es determinar si el array de Pokemon está o no vacío, de tal forma que podamos mostrar o no cierta información en base a ello, como por ejemplo:
 #### Mostrar en PokemonGame.vue el mensaje de "Espere por favor" y "Cargando Pokemons":
+
+![loading](img/loading.png)
 
 
 
 ### Al probar lo anterior, notarás que el cambio es prácticamente imperceptible. Por tanto:
 #### Añade una promesa en onMounted() del archivo usePokemonGame usando la función setTimeout para que al cargar la respuesta, tarde 1000 milésimas de segundo.
+```ts
+onMounted(async () => {
+    setTimeout(async () => {
+    await getPokemons();
+    console.log(pokemons.value);
+    },1000);
+  });
+  ```
 #### Comprueba que ahora se modifica el componente.
-#### Una vez compruebes que funciona correctamente, puedes borrarlo, ya que no nos va a hacer falta (trolleito jiji xd)
+![loadingResult](img/loadinResult.png)
+
+
 ### Ahora vamos a crear otra propiedad reactiva a la que vamos a llamar pokemonOptions:
  
 
 #### Estos pokemonOption van a ser las opciones de los Pokemons que vamos a mostrar, y por tanto, tenemos que crear una nueva función para manejarlas.
 #### En usePokemonGame añade:
+![pokemonOptionsUseState](img/pokemonOptionsState.png)
 
 
 #### ¿Cómo funciona este fragmento de código? Muestra por consola pokemonOptions.value para comprobar que efectivamente nos está devolviendo 4 pokemons como propiedades reactivas.
 
+Lo que hace es de la lista de pokemons que tenemos coge del primer valor hasta el de la cantidad que le indiquemos (por defecto 4), y despues, de la lista de pokemons, solo vamos a dejar los mismos menos los cuatro que ya hemos usado.
+
+![pokemonOptionsResult](img/pokemonOptionsStateResult.png)
+
 ### ¿Cómo determinamos cuál es el Pokemon correcto? 
 #### Tenemos que ser capaces de determinar cual es el Pokemon correcto. Vamos a hacerlo mediante una propiedad computada. Para ello vamos a crear:
 
+```ts
+const randomPokemon = computed(() => {
+    const randomIndex = Math.floor(Math.random() * pokemonsOptions.value.length);
+    return pokemonsOptions.value[randomIndex]
+  }
+```
+```ts
+return {
+    gameStatus, pokemons, isLoading, getPokemons, getNextOptions, pokemonsOptions, randomPokemon
+  }
+  ```
 
 #### Vamos a añadirlo en nuestro componente:
 
+```ts
+<section v-else class="flex flex-col justify-center items-center w-screen h-screen">
+    <h1>¿Quién es este Pokémon?</h1>
+    <h3>{{ randomPokemon }}</h3>
+    <!-- Pokemon Picture -->
+    <PokemonPicture />
+    <!-- Pokemon Options -->
+    <PokemonOptions />
+  </section>
+  ```
 
+![ResultImageRandoMpomeon](img/randomPokemon.png)
 #### Comprueba que el Pokémon que aparece está en la lista que aparece por consola y no que siempre ocupa la primera posición.
+Si, aparece y va rotando de posicon
 
 ### Ahora lo que debemos hacer es saber cual es la imagen correspondiente con ese Pokémon. 
-
-
+```vue
+ <PokemonPicture :pokemon-id="randomPokemon.id" />
+ ```
 
 #### ¿Qué estamos haciendo aquí?
 
+Le estamos mandado un parametro por props, que despues inteceptaremos en el component, para obtener la imagne correspondiente
+
 ### Vamos a PokemonPicture.vue y lo que tenemos que hacer es:
-#### Definir las props 
-
-
-#### Hacer el bind de src usando una propiedad computada: 
-
-
-
-
-#### Donde el enlace se modifica de la siguiente forma:
-
-
-
 
 #### Muestra el resultado y comprueba que es correcto.
+
+![getPokemonImage](img/getPokemonImage.png)
+
+![getPokemonIamgeResult](img/getPokemonImageResult.png)
+
 #### Ahora necesitamos crear otra propiedad que se encargue de mostrar la imagen original si se ha seleccionado la opción correcta. De la misma forma que lo anterior, hacemos:
 
+```vue
+<PokemonPicture :pokemon-id="randomPokemon.id" :show-pokemon="true" />
+```
 
 #### En PokemonPicture.vue:
 
+![pokemonPictureShow](img/pokemonPictureShowPokemon.png)
 
 #### Comprueba que ahora se visualiza la imagen del Pokémon original.
-#### En v-else, añade la clase que tenemos en animations.css para que se aplique cuando se visualice la imagen original.
-### Siguiendo con nuestro PokemonGame, nosotros ya podemos determinar cuando se debe visualizar la imagen correcta. ¿Cómo? Pues usando la propiedad que ya habíamos creado llamada GameStatus. Teníamos 3 estados: 'Playing', 'Won', y 'Lost'. Por tanto, modificamos el código:
 
+![showPokemon](img/pokemonPictureShowResult.png)
+
+#### En v-else, añade la clase que tenemos en animations.css para que se aplique cuando se visualice la imagen original.
+
+```vue
+<img v-else class="h-[200px] fade-in" :src="pokemonImage" alt="Pokemon" />
+```
+
+### Siguiendo con nuestro PokemonGame, nosotros ya podemos determinar cuando se debe visualizar la imagen correcta. ¿Cómo? Pues usando la propiedad que ya habíamos creado llamada GameStatus. Teníamos 3 estados: 'Playing', 'Won', y 'Lost'. Por tanto, modificamos el código:
+```vue
+    <PokemonPicture :pokemon-id="randomPokemon.id" :show-pokemon="gameStatus!= GameStatus.Playing" />
+```
 
 ### Mostrar las posibles opciones:
 #### Nosotros ya tenemos creado nuestras opciones en pokemonOpcions, por tanto, en PokemonGame.vue:
 
-
+```vue
+    <PokemonOptions :pokemon-options="pokemonsOptions" />
+```
 
 #### Ahora, en PokemonOptions.vue, borramos la lista que teniamos de ejemplo y la sustituimos por botones: 
 
 
 #### Explica el funcionamiento del componente hasta ahora y muestra el resultado de la aplicación.
+![pokemonOptionsNoAction](img/pokemonOptionsNoAction.png)
+
+Primero usamos flex para poder ordenaro los botones de manera vertical, despues por cada uno ponemos que la key es la id, y enseñamos en nombre.
+
+Todo esto cogiendo la lista de props.
+
+![PokemonOptionsNoActionResult](img/pokemonOptionsNoActionResult.png)
+
+
 
 #### Ahora tenemos que saber, cuando el usuario haga click sobre un botón, emitir cual es esa opción, para ello creamos defineEmits: 
 
+```ts
+const { pokemonOptions } = defineProps<Props>();
+defineEmits<{
+  selectedOption: [id: number];
+}>();
+```
 
-
+```ts
+div class="flex justify-center flex-col flex-wrap">
+    <button type="button" @click="$emit('selectedOption', item.id)" class="btn capitalize"
+      v-for="(item) in pokemonOptions" :key="item.id">{{ item.name
+      }}
+    </button>
+```
 
 #### y en PokemonGame.vue:
+```vue
+<PokemonOptions :pokemon-options="pokemonsOptions" @selected-option="onSelectedOption"/>
+```
+```ts
+const onSelectedOption = (id: number) => {
+  console.log(id);
+}
+```
 
 
 #### Ahora, en la consola debería aparecer el id del Pokemon al que estamos haciendo click.
 
-
+![onSelectedOption](img/onSelectedOption.png)
 
 ### Ahora vamos a centrarnos en saber cuando el jugador gana.
 #### La lógica es muy sencilla. Será true cuando el id de la imagen del Pokemon sea igual al id que se emite cuando el usuario hace click sobre una opción.
-#### Recuerden que teníamos una variable llamada GameStatus. 
 #### En nuestro composable, vamos a crear una nueva función llamada checkAnswer. Esta función recibe el id de la opción que el usuario está pulsando y tendremos que verificar si ese id es igual el id del Pokemon. 
 #### Si gana, el gameStatus cambia de valor. Pasará de Playing a Won. 
+```ts
+const checkAnswer = (id: number) => {
+    if (randomPokemon.value.id === id) {
+      gameStatus.value = GameStatus.Won
+    } else {
+      gameStatus.value = GameStatus.Lost
+    }
+  }
+```
 #### Cuando el usuario gana, vamos a lanzar una animación. Para ello: 
 ##### https://www.npmjs.com/package/canvas-confetti
 ##### Instala el paquete en el proyecto.
 ##### Importa el paquete en el composable. (Vale, aquí nos va a saltar un error ya que el paquete está pensado para javascript y no typescript. Para arreglarlo tendremos que ejecutar otro comando: npm i --save-dev @types/canvas-confetti, lo que estamos haciendo con este comando es instalar el paquete DT (archivo de definición) y eso debería hacer que el error desaparezca).
 ##### Ahora, si la persona gana, vamos a lanzar la animación. 
-
-
-#### Vamos a seguir completando nuestra función, ¿qué pasa si el usuario pierde?
-##### Si el usuario no gana, tendremos que cambiar el status a Lost.
-
+```ts
+const checkAnswer = (id: number) => {
+    if (randomPokemon.value.id === id) {
+      gameStatus.value = GameStatus.Won
+      confetti({
+        particleCount: 1000,
+        spread: 150,
+        origin: { y: 0.6 }
+      })
+    } else {
+      gameStatus.value = GameStatus.Lost
+    }
+  }
+  ```
+```ts
+const onSelectedOption = (id: number) => {
+  checkAnswer(id);
+}
+```
 
 ##### Una vez que se determine que el usuario perdió, hay que bloquear los botones restantes para evitar que el usuario haga click hasta encontrar la respuesta correcta. 
-Vamos a añadir una nueva propiedad en <PokemonOptions /> llamada block-selection. Será un booleano que recibiremos en PokemonOptions.vue y que tendremos que deshabilitar. 
+```vue
+<button type="button" @click="$emit('selectedOption', item.id)"
+    class="btn capitalize" :disabled="blockSelection"
+      v-for="(item) in pokemonOptions" :key="item.id">{{ item.name
+      }}
+    </button>
+```
+```vue
+    <PokemonOptions :pokemon-options="pokemonsOptions" @selected-option="onSelectedOption" :block-selection="gameStatus != GameStatus.Playing"/>
+```
 
-
-
+Efectivamente, funciona correctamente.
 
 #### Como tarea, ¿serías capaz de mostrar la opción correcta al usuario una vez pierda el juego? Impleméntalo.
-
+```vue
+    <PokemonOptions :pokemon-options="pokemonsOptions" @selected-option="onSelectedOption" :block-selection="gameStatus != GameStatus.Playing" :pokemon-correct="randomPokemon.id"/>
+```
+```vue
+ <button
+      type="button"
+      @click="$emit('selectedOption', item.id)"
+      :class="[
+        'btn capitalize bg-gradient-to-r from-purple-500 to-pink-500',
+        blockSelection && (item.id === pokemonCorrect
+          ? 'bg-gradient-to-r from-green-500 to-green-700'
+          : 'bg-gradient-to-r from-red-500 to-red-700')
+      ]"
+      :disabled="blockSelection"
+      v-for="(item) in pokemonOptions"
+      :key="item.id"
+    >
+      {{ item.name }}
+    </button>
+```
+Si todo esta normal, aplicamos un gradiente, si la partida esta bloqueada y es el boton correcto, se le pone un gradiente verde, sino un gradiente rojo
 #### Como extra, podrías intentar implementar un botón para volver a reiniciar el juego, ¿eres capaz?
+```ts
+const restartGame = () => {
+    gameStatus.value = GameStatus.Playing
+    getPokemons();
+    getNextOptions();
+  }
+```
+```vue
+ <button @click="restartGame" class="btn bg-gradient-to-r from-purple-500 to-pink-500 mt-5">Reiniciar</button>
+```
 
+![End](img/finished.png)
